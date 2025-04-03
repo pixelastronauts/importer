@@ -68,7 +68,7 @@ class ImportMappingsFieldtype extends Fieldtype
         $fields = $this->fields();
 
         return collect($this->field->value())
-            ->reject(fn ($row) => empty($row['key']))
+            ->reject(fn($row) => empty($row['key']))
             ->flatMap(function (array $row, string $field) use ($fields) {
                 $rules = $fields
                     ->get($field)
@@ -109,14 +109,14 @@ class ImportMappingsFieldtype extends Fieldtype
                     'key' => [
                         'type' => 'select',
                         'hide_display' => true,
-                        'options' => collect($row)->map(fn ($value, $key) => [
+                        'options' => collect($row)->map(fn($value, $key) => [
                             'key' => $key,
-                            'value' => "<{$key}>: ".Str::truncate($value, 200),
+                            'value' => "<{$key}>: " . Str::truncate($value, 200),
                         ])->values(),
                         'clearable' => true,
                     ],
                     ...$fields,
-                ])->setHandle("import-mappings-{$field->handle()}".md5($import->config()->toJson()));
+                ])->setHandle("import-mappings-{$field->handle()}" . md5($import->config()->toJson()));
 
                 return [$field->handle() => $blueprint->fields()];
             });
