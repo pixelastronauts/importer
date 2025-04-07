@@ -11,7 +11,7 @@ return [
     'destination_taxonomy_instructions' => 'Select the taxonomy to import terms into.',
     'destination_type_instructions' => 'Choose what type of data are you importing.',
     'import_file_instructions' => 'Upload a CSV or XML file to import.',
-    'import_name_instructions' => 'Name this import so you can identify it later.',
+    'import_name_instructions' => 'Name this import so you can identify it later..',
     'mapping_instructions' => 'Map the fields from your import to the fields in your blueprint.',
     'strategy_instructions' => 'Choose what should happen when importing.',
     'unique_field_instructions' => 'Select a "unique field" to determine if an item already exists.',
